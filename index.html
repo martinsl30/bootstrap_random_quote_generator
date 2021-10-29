@@ -41,11 +41,11 @@
             let randomIndex = Math.floor(Math.random() * quoteSize);
             let randomQuoteData = quoteBank[randomIndex];
 
-            let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=%22"
+            let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&amp;"
 
             //Add the Quote
             let quoteInApiFormat = randomQuoteData.quote.replace(/ /g, "%20");
-            twitterLink += quoteInApiFormat
+            twitterLink += " - " + quoteInApiFormat
             //Add the Author
             let authorInApiFormat = randomQuoteData.quote.replace(/ /g, "%20");
             twitterLink += " - " + authorInApiFormat
@@ -65,9 +65,9 @@
     <div class="container">
         <div class="row py-5">
             <div class="col-md-8 offset-md-2"
-                <wrapper id="quote-box">
-                    <div class="card">
-                     <div class="card-header">
+            <wrapper id="quote-box">
+                <div class="card">
+                    <div class="card-header">
                         Random Quote Machine
                     </div>
                     <div class="card-body">
@@ -77,11 +77,11 @@
                     <p class="card-text">
                     <div id="author"></div>
                     </p>
-                    <button id="new-quote" onClick="generateQuote();" class="btn btn-block btn-success">New Quote</button>
+                    <button id="new-quote" onclick="generateQuote();" class="btn btn-block btn-success">New Quote</button>
                     <a href="#" id="tweet-quote" target="_blank" class="btn btn-block btn-primary">Tweet Quote</a>
                     </div>
-                 </div>
-                </wrapper>
+                </div>
+            </wrapper>
             </div>
         </div>
     </div>
